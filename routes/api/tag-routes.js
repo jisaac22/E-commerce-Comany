@@ -1,4 +1,4 @@
-const router = requirw('express').Router();
+const router = require('express').Router();
 // require all exports from models folder
 const { Tag, Product, ProductTag} = require('../../models');
 
