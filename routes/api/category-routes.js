@@ -1,6 +1,5 @@
 // requires router to create routes
 const router = require('express').Router();
-const { route } = require('../../../utsa-san-fsf-pt-04-2021-u-c/13-ORM/02-Homework/Develop/routes/api/category-routes');
 const { Category, Product } = require('../../models');
 
 // categories endpoint 

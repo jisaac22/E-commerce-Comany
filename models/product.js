@@ -1,6 +1,6 @@
 // require model for schema db and connection to run server
 const { Model, DataTypes } = require('sequelize');
-const sequelize = require ('../;config/connection');
+const sequelize = require ('../config/connection');
 
 // creates table with columns
 class Product extends Model {}
@@ -8,17 +8,17 @@ class Product extends Model {}
 Product.init(
   {
     id: { 
-       type: DataType.INTEGER,
+       type: DataTypes.INTEGER,
        allowNull: false,
        primaryKey: true,
        autoIncrement: true,
     },
     product_name: {
-       type: DataType.STRING,
+       type: DataTypes.STRING,
        allowNull: false
     },
     price: {
-       type: DataType.DECIMAL(10, 2),
+       type: DataTypes.DECIMAL(10, 2),
        allowNull: false,
     //    validates if input is a decimal
        validate: {
@@ -26,7 +26,7 @@ Product.init(
        }
     },
     stock: {
-        type: DataType.INTEGER,
+        type: DataTypes.INTEGER,
         allowNull: false,
         // sets default value to 10
         defaultValue: 10,
@@ -36,7 +36,7 @@ Product.init(
         }
     },
     category_id: {
-        type: DataType.INTEGER,
+        type: DataTypes.INTEGER,
         // reference category id for inner joins
         references: {
             model: 'category',
