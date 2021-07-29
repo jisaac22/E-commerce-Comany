@@ -15,8 +15,20 @@ router.get('/', async (req, res) => {
 });
 
 // get product by id
-router.get('/:id', (req, res) => {
-
+router.get('/:id', async (req, res) => {
+  try {
+      const productById = await Product.findByPk(req.params.id, {
+          where: {
+              id: req.params.id,
+          }
+      })
+      if (!productById){
+          res.status(400).json({ message: 'No Product by that ID'})
+      }
+      res.status(200).json(productById)
+  } catch (err){
+      res.status(500).json(err)
+  }
 })
 
 // create new product 
