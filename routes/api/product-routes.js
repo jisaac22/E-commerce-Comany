@@ -5,8 +5,13 @@ const { Product, Category, Tag, ProductTag } = require ('../../models');
 //api/products endpoint
 
 //get all products
-router.get('/', (req, res) => {
-
+router.get('/', async (req, res) => {
+  try {
+      const allProducts = await Product.findAll()
+      res.status(200).json(allProducts)
+  } catch (err) {
+      res.status(500).json(err)
+  }
 });
 
 // get product by id
