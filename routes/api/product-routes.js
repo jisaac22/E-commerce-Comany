@@ -32,32 +32,32 @@ router.get('/:id', async (req, res) => {
 })
 
 // create new product 
-// router.post('/', (req, res) => {
+router.post('/', (req, res) => {
 
 
-// Product.create(req.body)
-// .then((product) => {
-//     if (req.body.tagIds.length){
-//         const productTagIdArr = req.body.tagIds.map((tag_id) => {
-//             return {
-//                 product_id: product.id,
-//                 tag_id,
-//             };
-//         });
-//         return ProductTag.bulkCreate(productTagIdArr);
-//     }
-//     res.status(200).json(product);
-// })
-// .then((productTagIds) => res.status(200).json(productTagIds))
-// .catch((err) => {
-//     console.log(err);
-//     res.status(400).json(err)
-// });    
-// });
+Product.create(req.body)
+.then((product) => {
+    if (req.body.tagIds.length){
+        const productTagIdArr = req.body.tagIds.map((tag_id) => {
+            return {
+                product_id: product.id,
+                tag_id,
+            };
+        });
+        return ProductTag.bulkCreate(productTagIdArr);
+    }
+    res.status(200).json(product);
+})
+.then((productTagIds) => res.status(200).json(productTagIds))
+.catch((err) => {
+    console.log(err);
+    res.status(400).json(err)
+});    
+});
 
 // update product
-// router.put('/:id', (req, res) => {
-//     // defines what product to update by given parameters 
+router.put('/:id', (req, res) => {})
+    // defines what product to update by given parameters 
 //     Product.update(req.body, {
 //         where: {
 //             id: req.params.id,
@@ -92,8 +92,8 @@ router.get('/:id', async (req, res) => {
 //     })
 // });
 
-router.delete('/:id', (req, res) => {
+// router.delete('/:id', (req, res) => {
 
-});
+// });
 
 module.exports = router;
