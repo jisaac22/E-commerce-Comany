@@ -5,8 +5,14 @@ const { Tag, Product, ProductTag} = require('../../models');
 // api/tags endpoints
 
 // finds all tags
-router.get('/', (req, res) => {
-
+router.get('/', async (req, res) => {
+  try {
+      const allTags = await Tag.findAll() 
+      res.status(200).json(allTags)
+  } catch (err) {
+      res.status(500).json(err)
+  }
+ 
 });
 // finds tags by id
 router.get('/:id', (req, res) => {
