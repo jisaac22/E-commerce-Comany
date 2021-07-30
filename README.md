@@ -19,3 +19,8 @@ Github: (https://github.com/jisaac22)
 Email: jacobisaac22@yahoo.com
 
 ### Links and Screenshots
+https://github.com/jisaac22/E-commerce-Company
+
+https://drive.google.com/file/d/1ncDY288SKnjLTw3KwGuKNFWowgkSTdmX/view
+
+https://drive.google.com/file/d/1WWfTv1kcXpTxWK3LkPbvsEeHbaSNuPvD/view
